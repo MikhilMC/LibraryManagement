@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #efefef;
+}
+
+.navbar {
+    background-color: #111166 !important;
+    padding-left: 6.3%;
+}
+
+header {
+    background-color: #000044;
+    padding-bottom: 2rem;
+}
+
+header h1 {
+    color: white;
+    padding: 35px 6.5%;
+    font-weight: 700;
+    font-size: 65px;
+    word-spacing: 5rem;
+}
+
+.page-content {
+    background-color: white;
+    margin: auto 6.5%;
+    position: relative;
+    bottom: 2rem;
+}
+
+.details {
+    padding: 20px;
+}
+
+.author-image {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    float: left;
+    margin-left: 1rem;
+}
+
+.text-content {
+    margin-left: 15rem;
+    margin-top: 1.6rem;
+}
+
+.home-address {
+    padding: 0 10px;
+    margin-bottom: 40px;
+}
+
+#next-page {
+    background-color: #418ac9;
+}
+
+footer {
+    padding: 0 0 2.5rem 6.5%;
+}
+
+footer h3 {
+    /* color: #91969b; */
+    margin-bottom: 0px;
+}
+
+#twt-btn {
+    background-color: #38A1F3 !important;
+}
+
+#fb-btn {
+    background-color: #3b5998 !important;
+}
+
+#gplus-btn {
+    background-color: #db4a39 !important;
+}
+
+#login-content {
+    color: #111166;
+}
+
+#signup-content {
+    color: #111166;
+}
+
+.btn-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .btn-div #login-button {
+    margin: 0;
+} */
+
+.btn-div button {
+    background-color: #111166;
+    margin: 0;
+}
+
+/* #login-content {
+    width: 50rem;
+} */
+
+/* meter {
+    width: 600px !important;
+    height: 25px !important;
+} */
+
+/* Webkit based browsers */
+meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+meter[value="2"]::-webkit-meter-optimum-value { background: orange; }
+meter[value="3"]::-webkit-meter-optimum-value { background: yellow; }
+meter[value="4"]::-webkit-meter-optimum-value { background: green; }
+
+
+/* Gecko based browsers */
+meter[value="1"]::-moz-meter-bar { background: red; }
+meter[value="2"]::-moz-meter-bar { background: orange;}
+meter[value="3"]::-moz-meter-bar { background: yellow; }
+meter[value="4"]::-moz-meter-bar { background: green; }

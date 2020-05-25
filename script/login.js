@@ -11,7 +11,7 @@ function validate() {
 
 function isEmailValid() {
     const emailError = document.querySelector("#emailError");
-    let emailRegex = /^([\w\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
+    let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (email.value == "") {
         email.placeholder = "Email field can not be empty.";
         emailError.innerHTML = "";

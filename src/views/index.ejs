@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library | Home</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom made CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <%for(let i=0;i<nav.length;i++) {%>
+                        <%if(i === 0) {%>
+                            <a class="nav-item nav-link active" href="<%=nav[i].link%>"><%=nav[i].name%> <span class="sr-only">(current)</span></a>
+                        <%} else {%>
+                            <a class="nav-item nav-link" href="<%=nav[i].link%> "><%=nav[i].name%></a>
+                        <%}%>
+                    <%}%>
+                </div>
+            </div>
+        </nav>
+        <h1><%=title%> </h1>
+    </header>
+    <section class="text-secondary page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 details">
+                    <img class="author-image" src="./images/isaac.jpeg" alt="Isaac Justesen">
+                    <div class="text-content mr-1">
+                        <h5 class="content-title">15 Creative Ways to Repurpose Your Content</h5><br>
+                        <span class="home-address border border-secondary rounded-sm bg-secondary text-light">constant-content.com</span><br>
+                        <p class="text-monospace mt-3">2 JAN 2019 <span class="align-text-bottom">.</span> <a class="text-secondary" href="https://www.constant-content.com/content-writing-service/2019/01/repurpose-content/">Read More</a></p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-12 details">
+                    <img class="author-image" src="./images/david.jpg" alt="David Appleyard">
+                    <div class="text-content mr-1">
+                        <h5 class="content-title">14 Useful Tools & Websites for Designers</h5><br>
+                        <span class="home-address border border-secondary rounded-sm bg-secondary text-light">designshack.net</span><br>
+                        <p class="text-monospace mt-3">7 SEP 2016 <span class="align-text-bottom">.</span> <a class="text-secondary" href="https://designshack.net/articles/business-articles/14-useful-tools-websites-for-designers/">Read More</a></p>
+                    </div>    
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-12 details">
+                    <img class="author-image" src="./images/anna-lewis.jpg" alt="Anna Lewis">
+                    <div class="text-content mr-1">
+                        <h5 class="content-title">Measuring Your Link Building with Google Analytics</h5><br>
+                        <span class="home-address border border-secondary rounded-sm bg-secondary text-light">searchenginewatch.com</span><br>
+                        <p class="text-monospace mt-3">26 FEB 2013 <span class="align-text-bottom">.</span> <a class="text-secondary" href="https://www.searchenginewatch.com/2013/02/26/measuring-your-link-building-with-google-analytics/">Read More</a></p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item"><a class="page-link text-light mr-1 mb-3" id="next-page" href="#">More <i class="fas fa-forward"></i></a></li>
+                </ul>
+              </nav>
+        </div>
+    </section>
+    <footer>
+        <h3 class="text-secondary">Follow Us</h3><br>
+        <nav aria-label="Social Media Links">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a href="#" class="page-link text-light mr-0 border-right-0" id="twt-btn">Twitter</a>
+                </li>
+                <li class="page-item">
+                    <a href="#" class="page-link text-light ml-0 mr-0 border-left-0 border-right-0" id="fb-btn">Facebook</a>
+                </li>
+                <li class="page-item">
+                    <a href="#" class="page-link text-light ml-0 border-left-0" id="gplus-btn">Google+</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+    <!-- Font Awesome Icon Script CDN -->
+    <script src="https://kit.fontawesome.com/b8fd7f0d92.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Javascript, jQuery, and Popper.js CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

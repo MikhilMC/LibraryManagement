@@ -88,6 +88,11 @@ footer h3 {
     color: #111166;
 }
 
+.lib-form {
+    margin: 0 15% 0 15%;
+    padding: 5% 0 5% 0;  
+}
+
 .btn-div {
     display: flex;
     align-items: center;

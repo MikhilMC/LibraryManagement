@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/MikhilMC/LibraryManagement/issues"
   },
-  "homepage": "https://github.com/MikhilMC/LibraryManagement#readme"
+  "homepage": "https://github.com/MikhilMC/LibraryManagement#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1"
+  }
 }

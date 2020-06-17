@@ -37,5 +37,5 @@ app.get("/", (req, res)=>{
 });
 
 app.listen(3000, ()=>{
-    console.log("Server is running at port " + chalk.green.bold("3000"))
+    console.log("Server is running at port " + chalk.red.bold("3000"))
 });

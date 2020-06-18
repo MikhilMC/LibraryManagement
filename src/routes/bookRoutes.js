@@ -24,16 +24,17 @@ function router(userNav) {
         }
     ];
     
-    booksRouter.get("/", function(req, res){
+    booksRouter.get("/", (req, res)=>{
         res.render("books",
         {
             userNav,
             title: "Library",
+            section: "Books",
             books
         })
     });
     
-    booksRouter.get("/:id", function(req, res){
+    booksRouter.get("/:id", (req, res)=>{
         const id = req.params.id;
         res.render("book", {
             userNav,

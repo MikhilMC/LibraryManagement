@@ -14,16 +14,11 @@ const nav = [
         name: "LOGIN"
     },
     {
-<<<<<<< HEAD
         link: "/signup",
-=======
-        link: "signup",
->>>>>>> 5432b91041a640e79bb0e9bfc3117564c9e61980
         name: "SIGNUP"
     }
 ];
 
-<<<<<<< HEAD
 const userNav = [
     {
         link: "/user",
@@ -47,21 +42,16 @@ const signupRouter = require("./src/routes/signupRoute")(nav);
 const loginRouter = require("./src/routes/loginRoute")(nav);
 const userRouter = require("./src/routes/userRouter")(userNav);
 const booksRouter = require("./src/routes/bookRoutes")(userNav);
-=======
 const signupRouter = require("./src/routes/signupRoute")(nav);
 const loginRouter = require("./src/routes/loginRoute")(nav);
->>>>>>> 5432b91041a640e79bb0e9bfc3117564c9e61980
 
 app.use(express.static("./public"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/src/views"));
 app.use("/signup", signupRouter);
 app.use("/login", loginRouter);
-<<<<<<< HEAD
 app.use("/user", userRouter);
 app.use("/books", booksRouter);
-=======
->>>>>>> 5432b91041a640e79bb0e9bfc3117564c9e61980
 
 app.get("/", (req, res)=>{
     res.render("index",
@@ -72,9 +62,5 @@ app.get("/", (req, res)=>{
 });
 
 app.listen(3000, ()=>{
-<<<<<<< HEAD
     console.log("Server is running at port " + chalk.red.bold("3000"))
-=======
-    console.log("Server is running at port " + chalk.green.bold("3000"))
->>>>>>> 5432b91041a640e79bb0e9bfc3117564c9e61980
 });

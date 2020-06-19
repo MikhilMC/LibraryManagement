@@ -43,6 +43,7 @@ const loginRouter = require("./src/routes/loginRoute")(nav);
 const userRouter = require("./src/routes/userRouter")(userNav);
 const booksRouter = require("./src/routes/bookRoutes")(userNav);
 const authorRouter = require("./src/routes/authorRoutes")(userNav);
+const addBookRouter = require("./src/routes/addBookRoute")(userNav);
 
 app.use(express.static("./public"));
 app.set("view engine", "ejs");
@@ -52,6 +53,7 @@ app.use("/login", loginRouter);
 app.use("/user", userRouter);
 app.use("/books", booksRouter);
 app.use("/authors", authorRouter);
+app.use("/addBook", addBookRouter);
 
 app.get("/", (req, res)=>{
     res.render("index",

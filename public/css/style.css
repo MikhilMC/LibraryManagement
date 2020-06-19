@@ -55,6 +55,12 @@ header h1 {
     margin-bottom: 40px;
 }
 
+#add-book {
+    margin-right: 0 !important;
+    border-right-width: 0 !important;
+    background-color: #418ac9;
+}
+
 #next-page {
     background-color: #418ac9;
 }
@@ -140,4 +146,16 @@ meter[value="4"]::-moz-meter-bar { background: green; }
         right: 14rem;
         width: 18rem;
     }
+}
+
+/* .scrollable-menu {
+    height: auto;
+    max-height: 50px;
+    overflow-x: hidden;
+} */
+
+.wrapper{
+    width:200px;
+    /* padding:20px; */
+    height: 150px;
 }

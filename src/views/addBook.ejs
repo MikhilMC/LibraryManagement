@@ -34,10 +34,10 @@
         </nav>
         <h1><%=title%> </h1>
     </header>
-    <section class="page-content" id="add-book">
+    <section class="page-content" id="addBook">
         <div class="container">
-            <h2 class="pt-3 text-center">Add Book</h2>
-            <form class="lib-form" method="POST" action="<%=userNav[1].link%> ">
+            <h2 class="pt-3 text-center">Add Book</h2> 
+            <form class="lib-form" method="POST" action="<%=userNav[1].link%>" enctype="multipart/form-data">
                 <div class="form-group row">
                     <label for="title" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Book Title</label>
                     <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="title" name="title" required>
@@ -52,37 +52,39 @@
                 </div> -->
                 <div class="form-group row">
                     <label for="genre" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Genre</label>
-                    <select class="form-control col-lg-10 col-md-10 col-sm-10 col-9" name="genre" id="genre" required>
-                        <option value="fantasy">Fantasy</option>
-                        <option value="adventure">Adventure</option>
-                        <option value="romance">Romance</option>
-                        <option value="contemporary">Contemporary</option>
-                        <option value="dystopian">Dystopian</option>
-                        <option value="mystery">Mystery</option>
-                        <option value="horror">Horror</option>
-                        <option value="thriller">Thriller</option>
-                        <option value="paranormal">Paranormal</option>
-                        <option value="historical fiction">Historical Fiction</option>
-                        <option value="science fiction">Science Fiction</option>
-                        <option value="memoir">Memoir</option>
-                        <option value="cooking">Cooking</option>
-                        <option value="art">Art</option>
-                        <option value="self-help / personal">Self-help / Personal</option>
-                        <option value="development">Development</option>
-                        <option value="motivational">Motivational</option>
-                        <option value="health">Health</option>
-                        <option value="history">History</option>
-                        <option value="travel">Travel</option>
-                        <option value="guide / how to">Guide / How-to</option>
-                        <option value="families & relationships">Families & Relationships</option>
-                        <option value="humour">Humour</option>
-                        <option value="children">Children</option>
-                    </select>
+                    <div class="wrapper">
+                        <select class="form-control col-lg-10 col-md-10 col-sm-10 col-9" name="genre" id="genre" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();' required>
+                            <option value="fantasy">Fantasy</option>
+                            <option value="adventure">Adventure</option>
+                            <option value="romance">Romance</option>
+                            <option value="contemporary">Contemporary</option>
+                            <option value="dystopian">Dystopian</option>
+                            <option value="mystery">Mystery</option>
+                            <option value="horror">Horror</option>
+                            <option value="thriller">Thriller</option>
+                            <option value="paranormal">Paranormal</option>
+                            <option value="historical fiction">Historical Fiction</option>
+                            <option value="science fiction">Science Fiction</option>
+                            <option value="memoir">Memoir</option>
+                            <option value="cooking">Cooking</option>
+                            <option value="art">Art</option>
+                            <option value="self-help / personal">Self-help / Personal</option>
+                            <option value="development">Development</option>
+                            <option value="motivational">Motivational</option>
+                            <option value="health">Health</option>
+                            <option value="history">History</option>
+                            <option value="travel">Travel</option>
+                            <option value="guide / how to">Guide / How-to</option>
+                            <option value="families & relationships">Families & Relationships</option>
+                            <option value="humour">Humour</option>
+                            <option value="children">Children</option>
+                        </select>
+                    </div>
                   </div>
-                <!-- <div class="form-group row">
+                <div class="form-group row">
                     <label for="img" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Book Image</label>
                     <input type="file" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="img" name="img">
-                </div> -->
+                </div>
                 <div class="form-group btn-div">
                     <button type="submit" class="btn text-light mb-3" id="addBook">Add Book</button>
                 </div>

@@ -6,7 +6,7 @@ function router(userNav) {
     addBook.get("/", (req, res)=>{
         res.render("addBook", {
             userNav,
-            title: "Library"
+            title: "Library",
         });
     });
 

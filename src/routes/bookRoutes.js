@@ -1,8 +1,37 @@
 const express = require("express");
+const multer = require("multer");
+var bodyParser = require('body-parser')
+const path = require("path");
 
 const booksRouter = express.Router();
 
-booksRouter.use(express.urlencoded());
+const upload = {
+    storage: multer.diskStorage({
+        destination: (req, file, next)=>{
+            next(null, "public/images/");
+        },
+        filename: (req, file, next)=>{
+            console.log(file);
+            const ext = path.extname(file.originalname).toLowerCase();
+            next(null, file.fieldname + "-" + Date.now() + "." + ext);
+        }
+    }),
+    fileFilter: (req, file, next)=>{
+        if(!file) {
+            next();
+        }
+        const image = file.mimetype.startsWith('image');
+        if (image) {
+            console.log('Photo uploaded.');
+            next(null, true);
+        } else {
+            console.log('File not supported.');
+            return next();
+        }
+    }
+}
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 function router(userNav) {
     var books = [
@@ -36,17 +65,22 @@ function router(userNav) {
         })
     });
 
-    booksRouter.post("/", (req, res)=>{
+    booksRouter.post("/", urlencodedParser, multer(upload).single("img"), (req, res)=>{
         let title = req.body.title;
         let author = req.body.author;
         let genre = req.body.genre;
-        let img = req.files.img;
-        console.log(title, author, genre, img);
+        let img = req.file.originalname;
+        // console.log(title, author, genre, img);
+        let newBook = {title, author, genre, img};
+        books.push(newBook);
+        res.render("books",
+        {
+            userNav,
+            title: "Library",
+            section: "Books",
+            books
+        })
     });
-
-    const addBookRouter = require("./addBookRoute")(userNav);
-
-    booksRouter.use("/addBook", addBookRouter);
     
     booksRouter.get("/:id", (req, res)=>{
         const id = req.params.id;

@@ -29,7 +29,6 @@ function router(userNav) {
     authorRouter.get("/", (req, res)=>{
         res.render("authors", {
             userNav,
-            title: "Library",
             section: "Authors",
             authors
         })
@@ -40,7 +39,6 @@ function router(userNav) {
         let id = req.params.id;
         res.render("author", {
             userNav,
-            title: "Library",
             author: authors[id]
         });
     });

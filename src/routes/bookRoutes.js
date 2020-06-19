@@ -65,7 +65,6 @@ function router(userNav) {
         res.render("books",
         {
             userNav,
-            title: "Library",
             section: "Books",
             books
         })
@@ -77,13 +76,12 @@ function router(userNav) {
         let title = req.body.title;
         let author = req.body.author;
         let genre = req.body.genre;
-        let img = req.file.originalname;
+        let img = req.file.filename;
         let newBook = {title, author, genre, img};
         books.push(newBook);
         res.render("books",
         {
             userNav,
-            title: "Library",
             section: "Books",
             books
         })
@@ -94,7 +92,6 @@ function router(userNav) {
         const id = req.params.id;
         res.render("book", {
             userNav,
-            title: "Library",
             book: books[id]
         });
     });

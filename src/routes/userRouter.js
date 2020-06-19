@@ -7,8 +7,7 @@ function router(userNav) {
     userRouter.get("/", (req, res)=>{
         res.render("user",
         {
-            userNav,
-            title: "Library"
+            userNav
         })
     })
 

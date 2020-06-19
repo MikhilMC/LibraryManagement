@@ -77,8 +77,7 @@ app.use("/addBook", addBookRouter);     // Adding a book to the books page
 app.get("/", (req, res)=>{
     res.render("index",
     {
-        nav,
-        title: "Library"
+        nav
     });
 });
 

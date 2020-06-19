@@ -2,6 +2,8 @@ const express = require("express");
 
 const booksRouter = express.Router();
 
+booksRouter.use(express.urlencoded());
+
 function router(userNav) {
     var books = [
         {
@@ -33,6 +35,18 @@ function router(userNav) {
             books
         })
     });
+
+    booksRouter.post("/", (req, res)=>{
+        let title = req.body.title;
+        let author = req.body.author;
+        let genre = req.body.genre;
+        let img = req.files.img;
+        console.log(title, author, genre, img);
+    });
+
+    const addBookRouter = require("./addBookRoute")(userNav);
+
+    booksRouter.use("/addBook", addBookRouter);
     
     booksRouter.get("/:id", (req, res)=>{
         const id = req.params.id;

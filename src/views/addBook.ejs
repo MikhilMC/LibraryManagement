@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD BOOK</title>
+    
+    <!-- Google Fonts -->
+    <link href="/css/css2.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom made CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <%for(let i=0;i<userNav.length;i++) {%>
+                        <%if(i === 1) {%>
+                            <a class="nav-item nav-link active" href="<%=userNav[i].link%>"><%=userNav[i].name%> <span class="sr-only">(current)</span></a>
+                        <%} else {%>
+                            <a class="nav-item nav-link" href="<%=userNav[i].link%> "><%=userNav[i].name%></a>
+                        <%}%>
+                    <%}%>
+                </div>
+            </div>
+        </nav>
+        <h1><%=title%> </h1>
+    </header>
+    <section class="page-content" id="add-book">
+        <div class="container">
+            <h2 class="pt-3 text-center">Add Book</h2>
+            <form class="lib-form" method="POST" action="<%=userNav[1].link%> ">
+                <div class="form-group row">
+                    <label for="title" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Book Title</label>
+                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="title" name="title" required>
+                </div>
+                <div class="form-group row">
+                    <label for="author" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Author</label>
+                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="author" name="author" required>
+                </div>
+                <!-- <div class="form-group row">
+                    <label for="name" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Genre</label>
+                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="genre" name="genre">
+                </div> -->
+                <div class="form-group row">
+                    <label for="genre" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Genre</label>
+                    <select class="form-control col-lg-10 col-md-10 col-sm-10 col-9" name="genre" id="genre" required>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="romance">Romance</option>
+                        <option value="contemporary">Contemporary</option>
+                        <option value="dystopian">Dystopian</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="horror">Horror</option>
+                        <option value="thriller">Thriller</option>
+                        <option value="paranormal">Paranormal</option>
+                        <option value="historical fiction">Historical Fiction</option>
+                        <option value="science fiction">Science Fiction</option>
+                        <option value="memoir">Memoir</option>
+                        <option value="cooking">Cooking</option>
+                        <option value="art">Art</option>
+                        <option value="self-help / personal">Self-help / Personal</option>
+                        <option value="development">Development</option>
+                        <option value="motivational">Motivational</option>
+                        <option value="health">Health</option>
+                        <option value="history">History</option>
+                        <option value="travel">Travel</option>
+                        <option value="guide / how to">Guide / How-to</option>
+                        <option value="families & relationships">Families & Relationships</option>
+                        <option value="humour">Humour</option>
+                        <option value="children">Children</option>
+                    </select>
+                  </div>
+                <!-- <div class="form-group row">
+                    <label for="img" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Book Image</label>
+                    <input type="file" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="img" name="img">
+                </div> -->
+                <div class="form-group btn-div">
+                    <button type="submit" class="btn text-light mb-3" id="addBook">Add Book</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <h3 class="text-secondary">Follow Us</h3><br>
+        <nav aria-label="Social Media Links">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a href="#" class="page-link bg-info text-light mr-0 border-right-0" id="twt-btn">Twitter</a>
+                </li>
+                <li class="page-item">
+                    <a href="#" class="page-link text-light ml-0 mr-0 border-left-0 border-right-0" id="fb-btn">Facebook</a>
+                </li>
+                <li class="page-item">
+                    <a href="#" class="page-link text-light ml-0 border-left-0" id="gplus-btn">Google+</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- Bootstrap Javascript, jQuery, and Popper.js CDN -->
+    <script src="/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript File Link -->
+    <script src="/js/signup.js"></script>
+</body>
+</html>

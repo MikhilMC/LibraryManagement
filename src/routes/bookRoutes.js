@@ -1,21 +1,25 @@
-const express = require("express");
-const multer = require("multer");
-var bodyParser = require('body-parser')
+const express = require("express");         // App router
+const multer = require("multer");           // File sorting middleware
+var bodyParser = require('body-parser')     // Cleans our req.body
 const path = require("path");
 
-const booksRouter = express.Router();
+const booksRouter = express.Router();       // Setting up an router
 
+//UPLOAD: to get file photos to temp server storage
 const upload = {
     storage: multer.diskStorage({
+        // Setup where the user's file will go
         destination: (req, file, next)=>{
             next(null, "public/images/");
         },
+        // Then give the file a unique name
         filename: (req, file, next)=>{
             console.log(file);
             const ext = path.extname(file.originalname).toLowerCase();
             next(null, file.fieldname + "-" + Date.now() + "." + ext);
         }
     }),
+    // A means of ensuring only images are uploaded. 
     fileFilter: (req, file, next)=>{
         if(!file) {
             next();
@@ -31,9 +35,10 @@ const upload = {
     }
 }
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var urlencodedParser = bodyParser.urlencoded({ extended: false })   // Handle body requests
 
 function router(userNav) {
+    // Books list
     var books = [
         {
             title: "Tom & Jerry",
@@ -55,6 +60,7 @@ function router(userNav) {
         }
     ];
     
+    // Router for the books list
     booksRouter.get("/", (req, res)=>{
         res.render("books",
         {
@@ -65,12 +71,13 @@ function router(userNav) {
         })
     });
 
+    // Router for reading the values from the form, uploading the image,
+    // and displaying a new books page
     booksRouter.post("/", urlencodedParser, multer(upload).single("img"), (req, res)=>{
         let title = req.body.title;
         let author = req.body.author;
         let genre = req.body.genre;
         let img = req.file.originalname;
-        // console.log(title, author, genre, img);
         let newBook = {title, author, genre, img};
         books.push(newBook);
         res.render("books",
@@ -82,6 +89,7 @@ function router(userNav) {
         })
     });
     
+    // Router for a single book page
     booksRouter.get("/:id", (req, res)=>{
         const id = req.params.id;
         res.render("book", {

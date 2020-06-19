@@ -1,9 +1,14 @@
-const express = require("express");
-const chalk = require("chalk");
-const path = require("path");
+// RUN PACKAGES
+const express = require("express");     // App Router
+const chalk = require("chalk");         // Terminal string styling done right
+const path = require("path");           // Node.JS path module
 
-const app = new express();
+// SETUP APP
+const app = new express();              // app router
 
+const port = process.env.PORT || 3000;  // preconfig your port
+
+// NAVIGATION BAR BEFORE LOGIN
 const nav = [
     {
         link: "/",
@@ -19,6 +24,7 @@ const nav = [
     }
 ];
 
+// NAVIGATION BAR AFTER LOGIN
 const userNav = [
     {
         link: "/user",
@@ -38,23 +44,36 @@ const userNav = [
     }
 ];
 
+// INITALIZING OF ROUTER VARIBLES FROM EXPORTED MODULES
+// Router for signup page
 const signupRouter = require("./src/routes/signupRoute")(nav);
+// Router for login page
 const loginRouter = require("./src/routes/loginRoute")(nav);
+// Router for user home page
 const userRouter = require("./src/routes/userRouter")(userNav);
+// Router for books page
 const booksRouter = require("./src/routes/bookRoutes")(userNav);
+// Router for author page
 const authorRouter = require("./src/routes/authorRoutes")(userNav);
+// Router for adding a book
 const addBookRouter = require("./src/routes/addBookRoute")(userNav);
 
+// Static folder for saving client side static files
 app.use(express.static("./public"));
+// Setting view engine as ejs
 app.set("view engine", "ejs");
+// Setting up the views folder
 app.set("views", path.join(__dirname, "/src/views"));
-app.use("/signup", signupRouter);
-app.use("/login", loginRouter);
-app.use("/user", userRouter);
-app.use("/books", booksRouter);
-app.use("/authors", authorRouter);
-app.use("/addBook", addBookRouter);
 
+// ASSIGNING ROUTER VARIABLES FOR EACH ROUTES
+app.use("/signup", signupRouter);       // Signup page
+app.use("/login", loginRouter);         // Login page
+app.use("/user", userRouter);           // User home page
+app.use("/books", booksRouter);         // Books page
+app.use("/authors", authorRouter);      // Author page
+app.use("/addBook", addBookRouter);     // Adding a book to the books page
+
+// Route for the Home page
 app.get("/", (req, res)=>{
     res.render("index",
     {
@@ -63,6 +82,7 @@ app.get("/", (req, res)=>{
     });
 });
 
-app.listen(3000, ()=>{
-    console.log("Server is running at port " + chalk.red.bold("3000"))
+// Setting up the port to handle all the requests and responses
+app.listen(port, ()=>{
+    console.log("Server is running at port " + chalk.red.bold(port));
 });

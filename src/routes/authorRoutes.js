@@ -1,8 +1,9 @@
 const express = require("express");
 
-const authorRouter = express.Router();
+const authorRouter = express.Router();      // Setting up an router
 
 function router(userNav) {
+    // Authors list
     let authors = [
         {
             name: "M. T. Vasudevan Nair",
@@ -24,6 +25,7 @@ function router(userNav) {
         }
     ];
     
+    // Router for the Authors page
     authorRouter.get("/", (req, res)=>{
         res.render("authors", {
             userNav,
@@ -33,6 +35,7 @@ function router(userNav) {
         })
     });
 
+    // Router for a single author's page
     authorRouter.get("/:id", (req, res)=>{
         let id = req.params.id;
         res.render("author", {

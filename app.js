@@ -39,6 +39,10 @@ const userNav = [
         name: "AUTHORS"
     },
     {
+        link: "/addBook",
+        name: "ADD BOOK"
+    },
+    {
         link: "/",
         name: "SIGN OUT"
     }
@@ -58,6 +62,8 @@ const authorRouter = require("./src/routes/authorRoutes")(userNav);
 // Router for adding a book
 const addBookRouter = require("./src/routes/addBookRoute")(userNav);
 
+//
+app.use(express.urlencoded({extended: true}));
 // Static folder for saving client side static files
 app.use(express.static("./public"));
 // Setting view engine as ejs

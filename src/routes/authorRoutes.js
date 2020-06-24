@@ -3,33 +3,12 @@ const express = require("express");
 const authorRouter = express.Router();      // Setting up an router
 
 function router(userNav) {
-    // Authors list
-    let authors = [
-        {
-            name: "M. T. Vasudevan Nair",
-            language: "Malayalam",
-            type: "Novelist",
-            img: "mt.jpg"
-        },
-        {
-            name: "Changampuzha Krishna Pillai",
-            language: "Malayalam",
-            type:"Poet",
-            img: "changampuzha.jpeg"
-        },
-        {
-            name: "George R. R. Martin",
-            language: "English",
-            type: "Novelist",
-            img: "George_R._R._Martin.jpg"
-        }
-    ];
-    
     // Router for the Authors page
     authorRouter.get("/", (req, res)=>{
         res.render("authors", {
             userNav,
-            section: "Authors",
+            title : "Library",
+            sub_title : "Authors",
             authors
         })
     });
@@ -39,7 +18,8 @@ function router(userNav) {
         let id = req.params.id;
         res.render("author", {
             userNav,
-            author: authors[id]
+            title : "Library",
+            author : authors[id]
         });
     });
 

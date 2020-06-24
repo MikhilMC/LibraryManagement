@@ -8,7 +8,9 @@ function router(nav) {
         res.render("login",
         {
             nav,
-            dest:"/user"
+            title : "Library",
+            sub_title : "Login",
+            dest :"/user"
         });
     });
 

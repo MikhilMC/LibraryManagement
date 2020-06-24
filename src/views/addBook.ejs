@@ -34,13 +34,13 @@
             </div>
         </nav>
         <!-- /Navigation bar -->
-        <h1>Library</h1>
+        <h1><%=title%></h1>
     </header>
     <section class="page-content" id="addBook">
         <div class="container">
-            <h2 class="pt-3 text-center">Add Book</h2>
+            <h2 class="pt-3 text-center"><%=sub_title%></h2>
             <!-- Form for adding a book -->
-            <form class="lib-form" method="POST" action="<%=userNav[1].link%>" enctype="multipart/form-data">
+            <form class="lib-form" method="POST" action="/addBook/add" enctype="multipart/form-data">
                 <div class="form-group row">
                     <label for="title" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Book Title</label>
                     <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="title" name="title" required>

@@ -34,20 +34,21 @@
             </div>
         </nav>
         <!-- /Navigation bar -->
-        <h1>Library</h1>
+        <h1><%=title%></h1>
     </header>
     <!-- Book list -->
     <section class="text-secondary page-content">
         <div class="container">
-            <h2 class="pt-3 text-center" style="color: #111166;"><%=section%></h2>
+            <h2 class="pt-3 text-center" style="color: #111166;"><%=sub_title%></h2>
             <%for(let i=0;i<books.length;i++){%>
             <div class="row">
                 <div class="col-lg-12 details">
-                    <img class="author-image" src="/images/<%=books[i].img%>" alt="">
+                    <img class="author-image" src="/images/<%=books[i].image%>" alt="">
                     <div class="text-content mr-1">
                         <h5 class="content-title"><%=books[i].title%></h5><br>
                         <span class="home-address border border-secondary rounded-sm bg-secondary text-light"><%=books[i].author%></span><br>
-                        <p class="text-monospace mt-3"><%=books[i].genre%> <span class="align-text-bottom">.</span> <a class="text-secondary" href="/books/<%=i%>">Read More</a></p>
+                        <p style="font-family: courier,'new courier';" class="text-muted mt-3"><%=books[i].genre%> <span class="align-text-bottom">.</span> 
+                            <a class="text-muted" href="/books/<%=books[i]._id%>">Read More</a></p>
                     </div>
                 </div>
             </div>

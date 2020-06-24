@@ -34,18 +34,18 @@
             </div>
         </nav>
         <!-- /Navigation bar -->
-        <h1>Library</h1>
+        <h1><%=title%></h1>
     </header>
     <!-- Section for a single book -->
     <section class="text-secondary page-content">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 details">
-                    <img class="author-image" src="/images/<%=book.img%>" alt="">
+                    <img class="author-image" src="/images/<%=book.image%>" alt="">
                     <div class="text-content mr-1">
                         <h5 class="content-title"><%=book.title%></h5><br>
                         <span class="home-address border border-secondary rounded-sm bg-secondary text-light"><%=book.author%></span><br>
-                        <p class="text-monospace mt-3"><%=book.genre%> <span class="align-text-bottom">.</span></p>
+                        <p style="font-family: courier,'new courier';" class="text-muted mt-3"><%=book.genre%> <span class="align-text-bottom">.</span></p>
                     </div>
                 </div>
             </div>

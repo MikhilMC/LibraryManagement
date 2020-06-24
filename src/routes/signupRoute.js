@@ -7,7 +7,10 @@ function router(nav) {
     signupRouter.get("/", (req, res)=>{
         res.render("signup",
         {
-            nav
+            nav,
+            title : "Library",
+            sub_title : "Signup",
+            dest : "/login"
         });
     });
 

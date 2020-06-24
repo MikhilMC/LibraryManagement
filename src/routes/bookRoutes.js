@@ -8,7 +8,8 @@ function router(userNav) {
         res.render("books",
         {
             userNav,
-            section: "Books",
+            title : "Library",
+            sub_title : "Books",
             books
         })
     });
@@ -18,7 +19,8 @@ function router(userNav) {
         const id = req.params.id;
         res.render("book", {
             userNav,
-            book: books[id]
+            title : "Library",
+            book : books[id]
         });
     });
 

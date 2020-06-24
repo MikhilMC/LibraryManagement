@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <%for(let i=0;i<userNav.length;i++) {%>
-                        <%if(i === 1) {%>
+                        <%if(i === 3) {%>
                             <a class="nav-item nav-link active" href="<%=userNav[i].link%>"><%=userNav[i].name%> <span class="sr-only">(current)</span></a>
                         <%} else {%>
                             <a class="nav-item nav-link" href="<%=userNav[i].link%> "><%=userNav[i].name%></a>
@@ -51,11 +51,11 @@
                 </div>
                 <div class="form-group row">
                     <label for="genre" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Genre</label>
-                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="author" name="author" required>
+                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="genre" name="genre" required>
                   </div>
                 <div class="form-group row">
-                    <label for="img" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Book Image</label>
-                    <input type="file" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="img" name="img">
+                    <label for="image" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Book Image</label>
+                    <input type="file" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="image" name="image" required>
                 </div>
                 <div class="form-group btn-div">
                     <button type="submit" class="btn text-light mb-3" id="addBook">Add Book</button>

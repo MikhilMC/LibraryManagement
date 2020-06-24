@@ -62,8 +62,8 @@ const authorRouter = require("./src/routes/authorRoutes")(userNav);
 // Router for adding a book
 const addBookRouter = require("./src/routes/addBookRoute")(userNav);
 
-//
-app.use(express.urlencoded({extended: true}));
+// app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 // Static folder for saving client side static files
 app.use(express.static("./public"));
 // Setting view engine as ejs

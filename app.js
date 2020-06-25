@@ -2,6 +2,7 @@
 const express = require("express");     // App Router
 const chalk = require("chalk");         // Terminal string styling done right
 const path = require("path");           // Node.JS path module
+const bodyparser = require("body-parser");
 
 // SETUP APP
 const app = new express();              // app router
@@ -68,7 +69,11 @@ const addBookRouter = require("./src/routes/addBookRoute")(userNav);
 
 const addAuthorRouter = require("./src/routes/addAuthorRoute")(userNav);
 
-// app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+const updateBookRouter = require("./src/routes/updateBookRouter")(userNav);
+
+const updateAuthorRouter = require("./src/routes/updateAuthorRouter")(userNav);
+
+app.use(bodyparser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 // Static folder for saving client side static files
 app.use(express.static("./public"));
@@ -85,6 +90,8 @@ app.use("/books", booksRouter);         // Books page
 app.use("/authors", authorRouter);      // Author page
 app.use("/addBook", addBookRouter);     // Adding a book to the books page
 app.use("/addAuthor", addAuthorRouter);
+app.use("/updateBook", updateBookRouter);
+app.use("/updateAuthor", updateAuthorRouter);
 
 // Route for the Home page
 app.get("/", (req, res)=>{

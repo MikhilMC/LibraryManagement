@@ -55,7 +55,7 @@ header h1 {
     margin-bottom: 40px;
 }
 
-#add-book {
+.add-book {
     margin-right: 0 !important;
     border-right-width: 0 !important;
     background-color: #418ac9;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADD BOOK</title>
+    <title>UPDATE AUTHOR</title>
     
     <!-- Google Fonts -->
     <link href="/css/css2.css" rel="stylesheet">
@@ -24,11 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <%for(let i=0;i<userNav.length;i++) {%>
-                        <%if(i === 3) {%>
-                            <a class="nav-item nav-link active" href="<%=userNav[i].link%>"><%=userNav[i].name%> <span class="sr-only">(current)</span></a>
-                        <%} else {%>
-                            <a class="nav-item nav-link" href="<%=userNav[i].link%> "><%=userNav[i].name%></a>
-                        <%}%>
+                        <a class="nav-item nav-link" href="<%=userNav[i].link%> "><%=userNav[i].name%></a>
                     <%}%>
                 </div>
             </div>
@@ -36,33 +32,32 @@
         <!-- /Navigation bar -->
         <h1><%=title%></h1>
     </header>
-    <section class="page-content" id="addBookSection">
+    <section class="page-content" id="updateAuthorSection">
         <div class="container">
-            <h2 class="pt-3 text-center"><%=sub_title%></h2>
-            <!-- Form for adding a book -->
-            <form class="lib-form" method="POST" action="/addBook/add" enctype="multipart/form-data">
+            <h2 class="pt-3 text-center"><%=sub_title%> - <%=author.name%></h2>
+            <!-- Form for updating an author -->
+            <form class="lib-form" method="POST" action="/updateAuthor/update/<%=author._id%>" enctype="multipart/form-data">
                 <div class="form-group row">
-                    <label for="title" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Book Title</label>
-                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="title" name="title" required>
+                    <label for="name" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Author Name</label>
+                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="name" name="name" placeholder="<%=author.name%>">
                 </div>
                 <div class="form-group row">
-                    <label for="author" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Author</label>
-                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="author" name="author" required>
+                    <label for="language" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Language</label>
+                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="language" name="language" placeholder="<%=author.language%>">
                 </div>
                 <div class="form-group row">
-                    <label for="genre" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Genre</label>
-                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="genre" name="genre" required>
+                    <label for="category" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Category</label>
+                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="category" name="category" placeholder="<%=author.category%>">
                   </div>
                 <div class="form-group row">
-                    <label for="image" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Book Image</label>
+                    <label for="image" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Author Image</label>
                     <input type="file" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="image" name="image">
-                    <label for="file upload error"><%=msg%></label>
-                </div>
+                    <label for="file upload error"><%=msg%></label></div>
                 <div class="form-group btn-div">
-                    <button type="submit" class="btn text-light mb-3 addBook">Add Book</button>
+                    <button type="submit" class="btn text-light mb-3 addBook">Update Author</button>
                 </div>
             </form>
-            <!-- /Form for adding a book -->
+            <!-- /Form for updating an author -->
         </div>
     </section>
     <footer>

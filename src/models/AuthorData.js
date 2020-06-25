@@ -10,14 +10,13 @@ mongoose.connect("mongodb://127.0.0.1:27017/LibraryApp", {
 // Schema definition
 const Schema = mongoose.Schema;
 
-const BookSchema = new Schema({
-    title: String,
-    author: String,
-    genre: String,
-    image: String
+const AuthorSchema = new Schema({
+    name : String,
+    language : String,
+    category : String,
+    image : String
 });
 
-// Model creation
-const BookData = mongoose.model("bookdata", BookSchema);
+const AuthorData = mongoose.model("authordata", AuthorSchema);
 
-module.exports = BookData;
+module.exports = AuthorData;

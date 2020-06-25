@@ -4,6 +4,10 @@ const booksRouter = express.Router();       // Setting up an router
 
 const BookData = require("../models/BookData");
 
+process.on('unhandledRejection', error => {
+    console.log('unhandledRejection', error.message);
+});
+
 function router(userNav) {
     // Router for the books list
     booksRouter.get("/", (req, res)=>{

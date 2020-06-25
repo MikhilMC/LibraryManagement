@@ -43,6 +43,10 @@ const userNav = [
         name: "ADD BOOK"
     },
     {
+        link: "/addAuthor",
+        name: "ADD AUTHOR"
+    },
+    {
         link: "/",
         name: "SIGN OUT"
     }
@@ -62,6 +66,8 @@ const authorRouter = require("./src/routes/authorRoutes")(userNav);
 // Router for adding a book
 const addBookRouter = require("./src/routes/addBookRoute")(userNav);
 
+const addAuthorRouter = require("./src/routes/addAuthorRoute")(userNav);
+
 // app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 // Static folder for saving client side static files
@@ -78,6 +84,7 @@ app.use("/user", userRouter);           // User home page
 app.use("/books", booksRouter);         // Books page
 app.use("/authors", authorRouter);      // Author page
 app.use("/addBook", addBookRouter);     // Adding a book to the books page
+app.use("/addAuthor", addAuthorRouter);
 
 // Route for the Home page
 app.get("/", (req, res)=>{

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=author.name%></title>
-
+    <title>ADD BOOK</title>
+    
     <!-- Google Fonts -->
     <link href="/css/css2.css" rel="stylesheet">
 
@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <%for(let i=0;i<userNav.length;i++) {%>
-                        <%if(i === 0) {%>
+                        <%if(i === 4) {%>
                             <a class="nav-item nav-link active" href="<%=userNav[i].link%>"><%=userNav[i].name%> <span class="sr-only">(current)</span></a>
                         <%} else {%>
                             <a class="nav-item nav-link" href="<%=userNav[i].link%> "><%=userNav[i].name%></a>
@@ -36,29 +36,41 @@
         <!-- /Navigation bar -->
         <h1><%=title%></h1>
     </header>
-    <!-- Section for a single author -->
-    <section class="text-secondary page-content">
+    <section class="page-content" id="addBook">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 details">
-                    <img class="author-image" src="/images/<%=author.image%>" alt="">
-                    <div class="text-content mr-1">
-                        <h5 class="content-title"><%=author.name%></h5><br>
-                        <span class="home-address border border-secondary rounded-sm bg-secondary text-light"><%=author.language%></span><br>
-                        <p style="font-family: courier,'new courier';" class="text-muted mt-3"><%=author.category%> <span class="align-text-bottom">.</span> </p>
-                    </div>
+            <h2 class="pt-3 text-center"><%=sub_title%></h2>
+            <!-- Form for adding a book -->
+            <form class="lib-form" method="POST" action="/addAuthor/add" enctype="multipart/form-data">
+                <div class="form-group row">
+                    <label for="name" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Author Name</label>
+                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="name" name="name" required>
                 </div>
-            </div>
+                <div class="form-group row">
+                    <label for="language" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Language</label>
+                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="language" name="language" required>
+                </div>
+                <div class="form-group row">
+                    <label for="category" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Category</label>
+                    <input type="text" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="category" name="category" required>
+                  </div>
+                <div class="form-group row">
+                    <label for="image" class="col-lg-2 col-md-2 col-sm-2 col-3 col-form-label">Author Image</label>
+                    <input type="file" class="form-control col-lg-10 col-md-10 col-sm-10 col-9" id="image" name="image">
+                    <label for="file upload error"><%=msg%></label></div>
+                <div class="form-group btn-div">
+                    <button type="submit" class="btn text-light mb-3" id="addBook">Add Book</button>
+                </div>
+            </form>
+            <!-- /Form for adding a book -->
         </div>
     </section>
-    <!-- /Section for a single author -->
     <footer>
         <h3 class="text-secondary">Follow Us</h3><br>
         <nav aria-label="Social Media Links">
             <!-- Social media icons -->
             <ul class="pagination">
                 <li class="page-item">
-                    <a href="#" class="page-link text-light mr-0 border-right-0" id="twt-btn">Twitter</a>
+                    <a href="#" class="page-link bg-info text-light mr-0 border-right-0" id="twt-btn">Twitter</a>
                 </li>
                 <li class="page-item">
                     <a href="#" class="page-link text-light ml-0 mr-0 border-left-0 border-right-0" id="fb-btn">Facebook</a>
@@ -67,13 +79,16 @@
                     <a href="#" class="page-link text-light ml-0 border-left-0" id="gplus-btn">Google+</a>
                 </li>
             </ul>
-            <!-- /Social media icons -->
+            <!-- Social media icons -->
         </nav>
     </footer>
 
-    <!-- Bootstrap Javascript, jQuery, and Popper.js CDN -->
+    <!-- Bootstrap Javascript, jQuery, and Popper.js -->
     <script src="/js/jquery-3.5.1.slim.min.js"></script>
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript File Link -->
+    <script src="/js/signup.js"></script>
 </body>
 </html>

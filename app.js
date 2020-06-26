@@ -11,46 +11,19 @@ const port = process.env.PORT || 3000;  // preconfig your port
 
 // NAVIGATION BAR BEFORE LOGIN
 const nav = [
-    {
-        link: "/",
-        name: "HOME"
-    },
-    {
-        link: "/login",
-        name: "LOGIN"
-    },
-    {
-        link: "/signup",
-        name: "SIGNUP"
-    }
+    { link: "/", name: "HOME" },
+    { link: "/login", name: "LOGIN" },
+    { link: "/signup", name: "SIGNUP" }
 ];
 
 // NAVIGATION BAR AFTER LOGIN
 const userNav = [
-    {
-        link: "/user",
-        name: "HOME"
-    },
-    {
-        link: "/books",
-        name: "BOOKS"
-    },
-    {
-        link: "/authors",
-        name: "AUTHORS"
-    },
-    {
-        link: "/addBook",
-        name: "ADD BOOK"
-    },
-    {
-        link: "/addAuthor",
-        name: "ADD AUTHOR"
-    },
-    {
-        link: "/",
-        name: "SIGN OUT"
-    }
+    { link: "/user", name: "HOME" },
+    { link: "/books", name: "BOOKS" },
+    { link: "/authors", name: "AUTHORS" },
+    { link: "/addBook", name: "ADD BOOK" },
+    { link: "/addAuthor", name: "ADD AUTHOR" },
+    { link: "/", name: "SIGN OUT" }
 ];
 
 // INITALIZING OF ROUTER VARIBLES FROM EXPORTED MODULES
@@ -73,6 +46,10 @@ const updateBookRouter = require("./src/routes/updateBookRouter")(userNav);
 
 const updateAuthorRouter = require("./src/routes/updateAuthorRouter")(userNav);
 
+const deleteBookRouter = require("./src/routes/deleteBookRoute")(userNav);
+
+const deleteAuthorRouter = require("./src/routes/deleteAuthorRoute")(userNav);
+
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 // Static folder for saving client side static files
@@ -92,6 +69,8 @@ app.use("/addBook", addBookRouter);     // Adding a book to the books page
 app.use("/addAuthor", addAuthorRouter);
 app.use("/updateBook", updateBookRouter);
 app.use("/updateAuthor", updateAuthorRouter);
+app.use("/deleteBook", deleteBookRouter);
+app.use("/deleteAuthor", deleteAuthorRouter);
 
 // Route for the Home page
 app.get("/", (req, res)=>{

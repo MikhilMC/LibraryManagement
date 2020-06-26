@@ -2,7 +2,7 @@
 const express = require("express");     // App Router
 const chalk = require("chalk");         // Terminal string styling done right
 const path = require("path");           // Node.JS path module
-const bodyparser = require("body-parser");
+//const bodyparser = require("body-parser");
 
 // SETUP APP
 const app = new express();              // app router
@@ -73,7 +73,7 @@ const updateBookRouter = require("./src/routes/updateBookRouter")(userNav);
 
 const updateAuthorRouter = require("./src/routes/updateAuthorRouter")(userNav);
 
-app.use(bodyparser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 // Static folder for saving client side static files
 app.use(express.static("./public"));

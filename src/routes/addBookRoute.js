@@ -31,7 +31,6 @@ const upload = multer({
 }).single("image");
 
 const BookData = require("../models/BookData");
-const { render } = require("ejs");
 
 function router(userNav) {
     // Route to the form for adding a home page

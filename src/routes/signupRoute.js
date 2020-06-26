@@ -18,7 +18,7 @@ function router(nav) {
         });
     });
 
-    signupRouter.post("/completed", (req, res)=>{
+    signupRouter.post("/", (req, res)=>{
         if (req.body.name == "" || req.body.userType == undefined || req.body.registerNumber == "") {
             res.render("signup",
             {
